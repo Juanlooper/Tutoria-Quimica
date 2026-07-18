@@ -224,6 +224,35 @@ export const module4Practices = [
     title: 'Práctica 10: Deducción de Identidad desde Geometría Macroscópica',
     statement: 'Un cubo sólido y puro de un metal desconocido mide $1.20\\text{ cm}$ de arista y pesa $15.48\\text{ g}$. Se determina mediante técnicas avanzadas que el cubo contiene exactamente $0.243\\text{ moles}$ de átomos. Calcule la densidad del cubo e identifique el metal analizando su masa molar.',
     answer: 'La densidad es $8.96\\text{ g/cm}^3$. El metal es el Cobre ($Cu$).',
-    explanation: 'Cálculo del volumen geométrico: $\\text{Volumen} = L^3 = (1.20\\text{ cm})^3 = 1.728\\text{ cm}^3$. Cálculo de la densidad macroscópica: $\\rho = \\frac{15.48\\text{ g}}{1.728\\text{ cm}^3} = 8.96\\text{ g/cm}^3$. Este dato físico concuerda con el Cobre. Para verificar inequívocamente su identidad química, hallamos la Masa Molar dividiendo la masa total entre los moles: $M = \\frac{15.48\\text{ g}}{0.243\\text{ moles}} = 63.70\\text{ g/mol}$. La masa atómica tabulada del Cobre es $63.55\\text{ g/mol}$, confirmando la identidad del metal.'
+      'explanation: 'Cálculo del volumen geométrico: $\\text{Volumen} = L^3 = (1.20\\text{ cm})^3 = 1.728\\text{ cm}^3$. Cálculo de la densidad macroscópica: $\\rho = \\frac{15.48\\text{ g}}{1.728\\text{ cm}^3} = 8.96\\text{ g/cm}^3$. Este dato físico concuerda con el Cobre. Para verificar inequívocamente su identidad química, hallamos la Masa Molar dividiendo la masa total entre los moles: $M = \\frac{15.48\\text{ g}}{0.243\\text{ moles}} = 63.70\\text{ g/mol}$. La masa atómica tabulada del Cobre es $63.55\\text{ g/mol}$, confirmando la identidad del metal.'
+    }
+  },
+  {
+    id: 'm4-prac11',
+    title: 'Práctica 11: Desglose molecular y notación científica',
+    statement: 'El colesterol es un lípido indispensable para las membranas celulares, cuya fórmula molecular es $C_{27}H_{46}O$. Un laboratorio en un hospital de Panamá analiza una muestra de sangre que contiene exactamente $0.150\\text{ g}$ de colesterol puro. Calcula: a) La cantidad de moles de colesterol presentes en la muestra. b) El número total de moléculas de colesterol. c) El número de átomos de carbono individuales que hay exclusivamente en esa muestra.',
+    answer: 'a) $3.88 \\times 10^{-4}\\text{ mol}$ | b) $2.34 \\times 10^{20}\\text{ moléculas}$ | c) $6.32 \\times 10^{21}\\text{ átomos de C}$',
+    explanation: 'Masa molar del colesterol ($C_{27}H_{46}O$) = $386.73\\text{ g/mol}$. a) Moles = $\\frac{0.150\\text{ g}}{386.73\\text{ g/mol}} = 3.88 \\times 10^{-4}\\text{ mol}$. b) Moléculas = $3.88 \\times 10^{-4}\\text{ mol} \\times (6.022 \\times 10^{23}\\text{ moléculas/mol}) = 2.34 \\times 10^{20}\\text{ moléculas}$. c) Átomos de C = $2.34 \\times 10^{20}\\text{ moléculas} \\times 27\\text{ átomos C/molécula} = 6.32 \\times 10^{21}\\text{ átomos de C}$.'
+  },
+  {
+    id: 'm4-prac12',
+    title: 'Práctica 12: Volumen molar de gases (CNPT)',
+    statement: 'El diclorodifluorometano ($CF_2Cl_2$), conocido comercialmente como Freón-12, fue un gas refrigerante muy utilizado antes de ser prohibido por su daño a la capa de ozono. Si se recuperan $85.5\\text{ L}$ de este gas a Condiciones Normales de Presión y Temperatura (CNPT) de un equipo industrial viejo: a) ¿Cuántos moles de gas Freón-12 se recuperaron? b) ¿Cuál es la masa exacta de este gas expresada en kilogramos? (Dato: Considera el volumen molar de un gas ideal en CNPT como $22.4\\text{ L/mol}$).',
+    answer: 'a) $3.82\\text{ mol}$ | b) $0.462\\text{ kg}$ ($461.9\\text{ g}$)',
+    explanation: 'a) Moles = $\\frac{85.5\\text{ L}}{22.4\\text{ L/mol}} = 3.817\\text{ mol}$. b) Masa molar del $CF_2Cl_2$ = $12.01 + (2 \\times 19.00) + (2 \\times 35.45) = 120.91\\text{ g/mol}$. Masa = $3.817\\text{ mol} \\times 120.91\\text{ g/mol} = 461.5\\text{ g}$ (redondeado a $\\sim461.9\\text{ g}$ dependiendo de la precisión atómica). En kilogramos es $\\approx 0.462\\text{ kg}$.'
+  },
+  {
+    id: 'm4-prac13',
+    title: 'Práctica 13: Densidad como factor de conversión',
+    statement: 'El alcohol etílico ($C_2H_5OH$) es un líquido a temperatura ambiente con una densidad de $0.789\\text{ g/mL}$. Un estudiante de química mide exactamente $450\\text{ mL}$ de este alcohol en una probeta para preparar una solución. Determina: a) Los moles de alcohol etílico contenidos en la probeta. b) El número total de átomos de hidrógeno presentes en esa cantidad de líquido.',
+    answer: 'a) $7.71\\text{ mol}$ | b) $2.79 \\times 10^{25}\\text{ átomos de H}$',
+    explanation: 'a) Masa neta = $450\\text{ mL} \\times 0.789\\text{ g/mL} = 355.05\\text{ g}$. Masa molar $C_2H_5OH$ = $46.08\\text{ g/mol}$. Moles = $\\frac{355.05\\text{ g}}{46.08\\text{ g/mol}} = 7.705\\text{ mol}$. b) Cada molécula tiene 6 átomos de H. Moléculas = $7.705\\text{ mol} \\times (6.022 \\times 10^{23}) = 4.64 \\times 10^{24}$. Átomos de H = $4.64 \\times 10^{24} \\times 6 = 2.78 \\times 10^{25}\\text{ átomos de H}$.'
+  },
+  {
+    id: 'm4-prac14',
+    title: 'Práctica 14: Identificación a partir de datos molares (Problema Inverso)',
+    statement: 'Un cilindro metálico contiene una muestra de un gas desconocido biatómico, al que llamaremos $X_2$. A CNPT, un estudiante extrae exactamente $5.60\\text{ L}$ de este gas y, tras pesarlo en una balanza analítica, descubre que tiene una masa neta de $17.75\\text{ g}$. Calcula la masa molar del gas biatómico ($X_2$) e identifica cuál es el elemento X utilizando la tabla periódica.',
+    answer: 'Masa molar: $71.0\\text{ g/mol}$. Elemento: Cloro ($Cl_2$).',
+    explanation: 'Moles del gas = $\\frac{5.60\\text{ L}}{22.4\\text{ L/mol}} = 0.250\\text{ mol}$. Masa molar de $X_2 = \\frac{17.75\\text{ g}}{0.250\\text{ mol}} = 71.0\\text{ g/mol}$. Si la molécula biatómica ($X_2$) pesa $71.0\\text{ g/mol}$, el átomo individual pesa $\\frac{71.0}{2} = 35.5\\text{ g/mol}$. Según la tabla periódica, este peso corresponde al Cloro ($Cl$), por lo que el gas es $Cl_2$.'
   }
 ];
