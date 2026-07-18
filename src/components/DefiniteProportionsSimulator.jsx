@@ -1,32 +1,101 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+const examples = [
+  {
+    id: 'water',
+    name: 'Agua (H₂O)',
+    element1: 'Hidrógeno (H₂)',
+    element2: 'Oxígeno (O₂)',
+    ratio: 8.0, // mass2 / mass1 = O / H = 8 / 1
+    desc: '1 g de Hidrógeno por cada 8 g de Oxígeno (1:8)',
+    defaultMass1: 2,
+    defaultMass2: 16,
+    max1: 20,
+    max2: 100,
+    maxProduct: 120,
+    step1: 0.5,
+    step2: 1
+  },
+  {
+    id: 'co2',
+    name: 'Dióxido de Carbono (CO₂)',
+    element1: 'Carbono (C)',
+    element2: 'Oxígeno (O₂)',
+    ratio: 2.6667, // O / C = 32 / 12 = 8 / 3 ≈ 2.6667
+    desc: '3 g de Carbono por cada 8 g de Oxígeno (3:8)',
+    defaultMass1: 12,
+    defaultMass2: 32,
+    max1: 30,
+    max2: 100,
+    maxProduct: 130,
+    step1: 0.5,
+    step2: 1
+  },
+  {
+    id: 'nh3',
+    name: 'Amoníaco (NH₃)',
+    element1: 'Nitrógeno (N₂)',
+    element2: 'Hidrógeno (H₂)',
+    ratio: 0.2143, // H / N = 3 / 14 ≈ 0.2143
+    desc: '14 g de Nitrógeno por cada 3 g de Hidrógeno (14:3)',
+    defaultMass1: 14,
+    defaultMass2: 3,
+    max1: 50,
+    max2: 20,
+    maxProduct: 70,
+    step1: 0.5,
+    step2: 0.1
+  },
+  {
+    id: 'mgo',
+    name: 'Óxido de Magnesio (MgO)',
+    element1: 'Magnesio (Mg)',
+    element2: 'Oxígeno (O₂)',
+    ratio: 0.6584, // O / Mg = 16 / 24.305 ≈ 0.6584
+    desc: '24.3 g de Magnesio por cada 16 g de Oxígeno (~3:2)',
+    defaultMass1: 24.3,
+    defaultMass2: 16,
+    max1: 100,
+    max2: 100,
+    maxProduct: 200,
+    step1: 1,
+    step2: 1
+  }
+];
 
 const DefiniteProportionsSimulator = () => {
-  const [massH, setMassH] = useState(2);
-  const [massO, setMassO] = useState(16);
+  const [selectedExampleId, setSelectedExampleId] = useState(examples[0].id);
+  
+  const example = examples.find(ex => ex.id === selectedExampleId) || examples[0];
 
-  // Proust proportion: 1g H needs 8g O (H:O = 1:8)
-  const ratio = 8.0;
+  const [mass1, setMass1] = useState(example.defaultMass1);
+  const [mass2, setMass2] = useState(example.defaultMass2);
 
-  const requiredOForAllH = massH * ratio;
+  useEffect(() => {
+    setMass1(example.defaultMass1);
+    setMass2(example.defaultMass2);
+  }, [example.id]);
+
+  const ratio = example.ratio;
+
+  const required2ForAll1 = mass1 * ratio;
   
   let productMass = 0;
-  let excessH = 0;
-  let excessO = 0;
+  let excess1 = 0;
+  let excess2 = 0;
 
-  if (requiredOForAllH <= massO) {
-    productMass = massH + requiredOForAllH;
-    excessO = massO - requiredOForAllH;
-    excessH = 0;
+  if (required2ForAll1 <= mass2) {
+    productMass = mass1 + required2ForAll1;
+    excess2 = mass2 - required2ForAll1;
+    excess1 = 0;
   } else {
-    const requiredHForAllO = massO / ratio;
-    productMass = massO + requiredHForAllO;
-    excessH = massH - requiredHForAllO;
-    excessO = 0;
+    const required1ForAll2 = mass2 / ratio;
+    productMass = mass2 + required1ForAll2;
+    excess1 = mass1 - required1ForAll2;
+    excess2 = 0;
   }
 
-  const maxProduct = 180;
-  const maxExcessH = 20;
-  const maxExcessO = 100;
+  const { maxProduct, max1, max2 } = example;
 
   return (
     <div className="card" style={{ backgroundColor: '#1E293B', color: 'white', borderColor: '#334155' }}>
@@ -34,8 +103,33 @@ const DefiniteProportionsSimulator = () => {
         <h3 style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: 0, color: 'white' }}>
           Simulador de Proporciones Definidas
         </h3>
-        <p style={{ color: '#94A3B8', fontSize: '0.9rem', marginTop: '0.5rem' }}>
-          Los elementos se combinan en proporciones fijas de masa. En el caso del agua ($H_2O$), la proporción teórica es siempre <strong>1 g de Hidrógeno por cada 8 g de Oxígeno (1:8)</strong>.
+        <p style={{ color: '#94A3B8', fontSize: '0.9rem', marginTop: '0.5rem', marginBottom: '1rem' }}>
+          Los elementos se combinan en proporciones fijas de masa.
+        </p>
+        
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+          <label style={{ color: '#CBD5E1', fontSize: '0.875rem' }}>Seleccionar compuesto:</label>
+          <select 
+            value={selectedExampleId} 
+            onChange={(e) => setSelectedExampleId(e.target.value)}
+            style={{ 
+              backgroundColor: '#0F172A', 
+              color: 'white', 
+              border: '1px solid #475569', 
+              padding: '0.5rem', 
+              borderRadius: '0.25rem',
+              outline: 'none',
+              cursor: 'pointer'
+            }}
+          >
+            {examples.map(ex => (
+              <option key={ex.id} value={ex.id}>{ex.name}</option>
+            ))}
+          </select>
+        </div>
+        
+        <p style={{ color: '#60A5FA', fontSize: '0.875rem', marginTop: '1rem', fontStyle: 'italic' }}>
+          Proporción teórica: {example.desc}
         </p>
       </div>
 
@@ -48,28 +142,28 @@ const DefiniteProportionsSimulator = () => {
             
             <div style={{ marginBottom: '1.5rem' }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.875rem', color: '#CBD5E1', marginBottom: '0.5rem' }}>
-                <span>Masa de Hidrógeno ($H_2$)</span>
-                <span style={{ fontWeight: 'bold', color: 'white' }}>{massH.toFixed(1)} g</span>
+                <span>Masa de {example.element1}</span>
+                <span style={{ fontWeight: 'bold', color: 'white' }}>{mass1.toFixed(1)} g</span>
               </div>
               <input 
                 type="range" 
-                min="0" max="20" step="0.5" 
-                value={massH} 
-                onChange={(e) => setMassH(Number(e.target.value))}
+                min="0" max={max1} step={example.step1} 
+                value={mass1} 
+                onChange={(e) => setMass1(Number(e.target.value))}
                 style={{ width: '100%', cursor: 'pointer' }} 
               />
             </div>
 
             <div>
               <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.875rem', color: '#CBD5E1', marginBottom: '0.5rem' }}>
-                <span>Masa de Oxígeno ($O_2$)</span>
-                <span style={{ fontWeight: 'bold', color: 'white' }}>{massO.toFixed(1)} g</span>
+                <span>Masa de {example.element2}</span>
+                <span style={{ fontWeight: 'bold', color: 'white' }}>{mass2.toFixed(1)} g</span>
               </div>
               <input 
                 type="range" 
-                min="0" max="100" step="1" 
-                value={massO} 
-                onChange={(e) => setMassO(Number(e.target.value))}
+                min="0" max={max2} step={example.step2} 
+                value={mass2} 
+                onChange={(e) => setMass2(Number(e.target.value))}
                 style={{ width: '100%', cursor: 'pointer' }} 
               />
             </div>
@@ -85,18 +179,18 @@ const DefiniteProportionsSimulator = () => {
           <div style={{ display: 'flex', justifyContent: 'space-around', alignItems: 'flex-end', height: '12rem', marginBottom: '1.5rem', borderBottom: '2px solid #334155', paddingBottom: '0.5rem' }}>
             
             <div style={{ width: '5rem', backgroundColor: '#1E293B', border: '2px solid #475569', borderBottomLeftRadius: '0.75rem', borderBottomRightRadius: '0.75rem', height: '100%', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-              <div style={{ width: '100%', backgroundColor: '#22D3EE', opacity: 0.8, height: `${(productMass / maxProduct) * 100}%`, transition: 'height 0.5s ease-in-out' }}></div>
+              <div style={{ width: '100%', backgroundColor: '#22D3EE', opacity: 0.8, height: `${Math.min(100, (productMass / maxProduct) * 100)}%`, transition: 'height 0.5s ease-in-out' }}></div>
               <div style={{ position: 'absolute', width: '100%', textAlign: 'center', bottom: '0.5rem', color: '#0F172A', fontWeight: 'bold', fontSize: '0.75rem', textShadow: '0px 0px 3px rgba(255,255,255,0.8)' }}>Producto</div>
             </div>
             
             <div style={{ width: '5rem', backgroundColor: '#1E293B', border: '2px dashed #475569', borderBottomLeftRadius: '0.75rem', borderBottomRightRadius: '0.75rem', height: '100%', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-              <div style={{ width: '100%', backgroundColor: '#93C5FD', opacity: 0.5, height: `${(excessH / maxExcessH) * 100}%`, transition: 'height 0.5s ease-in-out' }}></div>
-              <div style={{ position: 'absolute', width: '100%', textAlign: 'center', bottom: '0.5rem', color: 'white', fontWeight: 'bold', fontSize: '0.75rem' }}>Exceso H</div>
+              <div style={{ width: '100%', backgroundColor: '#93C5FD', opacity: 0.5, height: `${Math.min(100, (excess1 / max1) * 100)}%`, transition: 'height 0.5s ease-in-out' }}></div>
+              <div style={{ position: 'absolute', width: '100%', textAlign: 'center', bottom: '0.5rem', color: 'white', fontWeight: 'bold', fontSize: '0.75rem' }}>Exceso 1</div>
             </div>
 
             <div style={{ width: '5rem', backgroundColor: '#1E293B', border: '2px dashed #475569', borderBottomLeftRadius: '0.75rem', borderBottomRightRadius: '0.75rem', height: '100%', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-              <div style={{ width: '100%', backgroundColor: '#FCA5A5', opacity: 0.5, height: `${(excessO / maxExcessO) * 100}%`, transition: 'height 0.5s ease-in-out' }}></div>
-              <div style={{ position: 'absolute', width: '100%', textAlign: 'center', bottom: '0.5rem', color: 'white', fontWeight: 'bold', fontSize: '0.75rem' }}>Exceso O</div>
+              <div style={{ width: '100%', backgroundColor: '#FCA5A5', opacity: 0.5, height: `${Math.min(100, (excess2 / max2) * 100)}%`, transition: 'height 0.5s ease-in-out' }}></div>
+              <div style={{ position: 'absolute', width: '100%', textAlign: 'center', bottom: '0.5rem', color: 'white', fontWeight: 'bold', fontSize: '0.75rem' }}>Exceso 2</div>
             </div>
           </div>
 
@@ -106,12 +200,12 @@ const DefiniteProportionsSimulator = () => {
               <div style={{ fontWeight: 'bold', color: 'white', fontSize: '1.125rem' }}>{productMass.toFixed(1)} g</div>
             </div>
             <div style={{ backgroundColor: 'rgba(30, 58, 138, 0.5)', padding: '0.5rem', borderRadius: '0.25rem' }}>
-              <div style={{ fontSize: '0.65rem', color: '#93C5FD' }}>Reactivo Exceso (H)</div>
-              <div style={{ fontWeight: 'bold', color: 'white', fontSize: '1.125rem' }}>{excessH.toFixed(1)} g</div>
+              <div style={{ fontSize: '0.65rem', color: '#93C5FD' }}>Exceso {example.element1.split(' ')[0]}</div>
+              <div style={{ fontWeight: 'bold', color: 'white', fontSize: '1.125rem' }}>{excess1.toFixed(1)} g</div>
             </div>
             <div style={{ backgroundColor: 'rgba(127, 29, 29, 0.5)', padding: '0.5rem', borderRadius: '0.25rem' }}>
-              <div style={{ fontSize: '0.65rem', color: '#FCA5A5' }}>Reactivo Exceso (O)</div>
-              <div style={{ fontWeight: 'bold', color: 'white', fontSize: '1.125rem' }}>{excessO.toFixed(1)} g</div>
+              <div style={{ fontSize: '0.65rem', color: '#FCA5A5' }}>Exceso {example.element2.split(' ')[0]}</div>
+              <div style={{ fontWeight: 'bold', color: 'white', fontSize: '1.125rem' }}>{excess2.toFixed(1)} g</div>
             </div>
           </div>
         </div>
@@ -122,3 +216,4 @@ const DefiniteProportionsSimulator = () => {
 };
 
 export default DefiniteProportionsSimulator;
+

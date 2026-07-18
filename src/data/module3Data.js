@@ -10,6 +10,12 @@ export const module3Rules = [
     title: 'Ley de las Proporciones Definidas (Proust, 1799)',
     content: 'Postula que muestras diferentes de un mismo compuesto químico puro contienen siempre los mismos elementos en idéntica proporción de masa. A modo de ilustración, el agua pura ($H_2O$) mantiene una relación constante de masa de $1\\text{ g}$ de Hidrógeno por cada $8\\text{ g}$ de Oxígeno (Razón $1:8$), independientemente de su método de síntesis.',
     note: 'Limitación Estequiométrica: La alteración arbitraria de proporciones iniciales de reactivos no modifica la composición del producto final. El elemento que se consume en su totalidad se denomina reactivo limitante, mientras que la masa sobrante del otro elemento constituye el reactivo en exceso.'
+  },
+  {
+    id: 'm3-rule3',
+    title: 'El Mol y la Masa Molar',
+    content: 'El mol es la unidad básica del SI para medir la cantidad de sustancia. Un mol contiene exactamente el número de Avogadro ($6.022 \\times 10^{23}$) de entidades elementales (átomos, moléculas, iones). La masa molar es la masa de un mol de una sustancia, expresada en g/mol, y es numéricamente equivalente a su masa atómica o molecular en uma.',
+    note: 'Conversión fundamental: Masa (g) $\\leftrightarrow$ Moles (mol) $\\leftrightarrow$ Número de partículas (átomos/moléculas). Para convertir masa a moles se divide entre la masa molar; para convertir moles a partículas se multiplica por el número de Avogadro.'
   }
 ];
 
@@ -128,6 +134,31 @@ export const module3Examples = [
       'Reactivos sin reaccionar: El $30\\%$ inicial no se convirtió: $25.0\\text{ g} \\times 0.30 = 7.5\\text{ g}$.',
       'Verificación global: $\\text{Producto final} + \\text{Reactivos intactos} = 17.5\\text{ g} + 7.5\\text{ g} = 25.0\\text{ g}$. Lavoisier se cumple con rigor.'
     ]
+  },
+  {
+    id: 'm3-ex10',
+    title: 'Ejemplo 10: Cálculo de Masa Molar y Moles',
+    problem: 'Determine la masa molar del ácido sulfúrico ($H_2SO_4$) y calcule cuántos moles hay en $49.0\\text{ g}$ de este compuesto. (Masas atómicas: $H = 1.01$, $S = 32.07$, $O = 16.00$).',
+    analysis: 'Primero se debe calcular la masa molar sumando las masas atómicas de todos los elementos presentes en la fórmula, y luego usar este valor como factor de conversión.',
+    steps: [
+      'Cálculo de la masa molar: $(2 \\times 1.01) + (1 \\times 32.07) + (4 \\times 16.00)$.',
+      'Resolución parcial: $2.02 + 32.07 + 64.00 = 98.09\\text{ g/mol}$.',
+      'Conversión de masa a moles: Moles = $\\frac{\\text{Masa}}{\\text{Masa Molar}} = \\frac{49.0\\text{ g}}{98.09\\text{ g/mol}}$.',
+      'Cálculo final: Moles = $0.4995\\text{ moles}$.',
+      'Conclusión: En $49.0\\text{ g}$ de $H_2SO_4$ hay aproximadamente $0.5\\text{ moles}$ de la sustancia.'
+    ]
+  },
+  {
+    id: 'm3-ex11',
+    title: 'Ejemplo 11: De Masa a Número de Moléculas y Átomos',
+    problem: 'Una muestra contiene $9.0\\text{ g}$ de agua ($H_2O$). ¿Cuántas moléculas de agua hay en la muestra? ¿Cuántos átomos de hidrógeno en total? (Masa molar $H_2O = 18.02\\text{ g/mol}$).',
+    analysis: 'Se requiere una conversión en dos pasos: primero de masa a moles usando la masa molar, y luego de moles a moléculas usando el número de Avogadro ($6.022 \\times 10^{23}$).',
+    steps: [
+      'Conversión a moles: $\\frac{9.0\\text{ g}}{18.02\\text{ g/mol}} = 0.499\\text{ moles de } H_2O$.',
+      'Conversión a moléculas: $0.499\\text{ moles} \\times (6.022 \\times 10^{23}\\text{ moléculas/mol}) = 3.01 \\times 10^{23}\\text{ moléculas}$.',
+      'Análisis de la composición: Cada molécula de agua tiene 2 átomos de hidrógeno.',
+      'Cálculo de átomos de H: $3.01 \\times 10^{23}\\text{ moléculas} \\times 2 = 6.02 \\times 10^{23}\\text{ átomos de H}$.'
+    ]
   }
 ];
 
@@ -201,5 +232,19 @@ export const module3Practices = [
     statement: 'Un estudiante analiza Carbonato de Sodio ($Na_2CO_3$) y halla experimentalmente que contiene $43.38\\%$ de Sodio y $11.33\\%$ de Carbono. Asumiendo que su análisis es perfecto, ¿cuál debe ser inexorablemente el porcentaje en masa del Oxígeno en el compuesto?',
     answer: 'El Oxígeno debe constituir el $45.29\\%$ de la masa.',
     explanation: 'Este es un corolario directo de la conservación de la masa (Lavoisier) extrapolado a la composición de un compuesto (Proust). Si un compuesto se asume puro, la sumatoria de los porcentajes másicos de todos sus elementos constituyentes debe equivaler al $100\\%$ entero. Por ende, $\\% O = 100\\% - (43.38\\% + 11.33\\%) = 100\\% - 54.71\\% = 45.29\\%$.'
+  },
+  {
+    id: 'm3-prac11',
+    title: 'Práctica 11: Determinación de Moles desde la Masa',
+    statement: 'Calcule la cantidad de moles presentes en una muestra de $100\\text{ g}$ de glucosa ($C_6H_{12}O_6$). Utilice las siguientes masas atómicas: C = 12.01, H = 1.01, O = 16.00.',
+    answer: 'La muestra contiene $0.555\\text{ moles}$ de glucosa.',
+    explanation: 'Primero determinamos la masa molar de la glucosa: $(6 \\times 12.01) + (12 \\times 1.01) + (6 \\times 16.00) = 72.06 + 12.12 + 96.00 = 180.18\\text{ g/mol}$. Luego dividimos la masa entre la masa molar: $\\frac{100\\text{ g}}{180.18\\text{ g/mol}} = 0.555\\text{ moles}$.'
+  },
+  {
+    id: 'm3-prac12',
+    title: 'Práctica 12: Cálculo de Átomos en un Elemento Puro',
+    statement: 'Un anillo de oro puro de 24 quilates tiene una masa de $3.94\\text{ g}$. Si la masa molar del oro (Au) es $197.0\\text{ g/mol}$, ¿cuántos átomos de oro componen el anillo? ($N_A = 6.022 \\times 10^{23}$)',
+    answer: 'El anillo está compuesto por $1.20 \\times 10^{22}$ átomos de oro.',
+    explanation: 'Primero, se convierte la masa a moles: $\\frac{3.94\\text{ g}}{197.0\\text{ g/mol}} = 0.0200\\text{ moles}$. Segundo, se multiplica por el número de Avogadro: $0.0200\\text{ moles} \\times (6.022 \\times 10^{23}\\text{ átomos/mol}) = 1.2044 \\times 10^{22}\\text{ átomos}$.'
   }
 ];

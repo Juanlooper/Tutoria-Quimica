@@ -113,6 +113,45 @@ export const module4Examples = [
       'Aplicación del múltiplo: $(CH_2O) \\times 2 = C_2H_4O_2$.',
       'Conclusión: La molécula real contiene el doble de átomos que su unidad mínima empírica. Es el ácido acético ($C_2H_4O_2$).'
     ]
+  },
+  {
+    id: 'm4-ex9',
+    title: 'Ejemplo 9: Estequiometría de Reacción (Masa a Masa)',
+    problem: 'La combustión del propano ($C_3H_8$) se da según la ecuación balanceada: $C_3H_8 + 5O_2 \\rightarrow 3CO_2 + 4H_2O$. ¿Qué masa de Dióxido de Carbono ($CO_2$) se produce al quemar $100.0\\text{ g}$ de propano con exceso de oxígeno? (Masas Molares: $C_3H_8 = 44.1\\text{ g/mol}$, $CO_2 = 44.0\\text{ g/mol}$).',
+    analysis: 'Este es un problema estequiométrico clásico que requiere seguir la ruta completa: Masa A $\\rightarrow$ Moles A $\\rightarrow$ Moles B $\\rightarrow$ Masa B.',
+    steps: [
+      'Paso 1: Convertir la masa del reactivo a moles. Moles de $C_3H_8 = \\frac{100.0\\text{ g}}{44.1\\text{ g/mol}} = 2.27\\text{ moles}$.',
+      'Paso 2: Usar la relación estequiométrica (puente molar) de la ecuación. Por cada 1 mol de $C_3H_8$ se producen 3 moles de $CO_2$.',
+      'Paso 3: Calcular los moles teóricos de producto. Moles de $CO_2 = 2.27 \\times 3 = 6.81\\text{ moles}$.',
+      'Paso 4: Convertir los moles de producto a masa. Masa de $CO_2 = 6.81\\text{ moles} \\times 44.0\\text{ g/mol} = 299.64\\text{ g}$.',
+      'Conclusión: Se producirán exactamente $299.64\\text{ gramos}$ de $CO_2$.'
+    ]
+  },
+  {
+    id: 'm4-ex10',
+    title: 'Ejemplo 10: Reactivo Limitante y Masa de Producto',
+    problem: 'Se hacen reaccionar $50.0\\text{ g}$ de Aluminio ($Al$) con $100.0\\text{ g}$ de Cloro gaseoso ($Cl_2$) para formar Cloruro de Aluminio ($AlCl_3$) según la reacción: $2Al + 3Cl_2 \\rightarrow 2AlCl_3$. Determine el reactivo limitante y la masa máxima de $AlCl_3$ que se puede formar. (Masas Molares: $Al = 26.98$, $Cl_2 = 70.90$, $AlCl_3 = 133.33$).',
+    analysis: 'Cuando se conocen las masas de dos o más reactivos, es obligatorio determinar cuál de ellos se agotará primero (reactivo limitante) antes de predecir la cantidad de producto.',
+    steps: [
+      'Paso 1: Convertir ambas masas a moles. Moles $Al = \\frac{50.0}{26.98} = 1.85\\text{ moles}$. Moles $Cl_2 = \\frac{100.0}{70.90} = 1.41\\text{ moles}$.',
+      'Paso 2: Dividir los moles de cada reactivo por su coeficiente estequiométrico para identificar el limitante. Para $Al$: $1.85 / 2 = 0.925$. Para $Cl_2$: $1.41 / 3 = 0.470$.',
+      'Paso 3: Identificar al limitante. Como $0.470 < 0.925$, el $Cl_2$ es el reactivo limitante y determina la cantidad de producto.',
+      'Paso 4: Calcular los moles de producto usando el limitante. Moles $AlCl_3 = 1.41\\text{ moles de } Cl_2 \\times (2\\text{ moles de } AlCl_3 / 3\\text{ moles de } Cl_2) = 0.94\\text{ moles}$.',
+      'Paso 5: Convertir a masa. Masa $AlCl_3 = 0.94\\text{ moles} \\times 133.33\\text{ g/mol} = 125.33\\text{ g}$.'
+    ]
+  },
+  {
+    id: 'm4-ex11',
+    title: 'Ejemplo 11: Pureza y Rendimiento Porcentual Combinados',
+    problem: 'En la industria, se hacen reaccionar $200\\text{ kg}$ de un mineral que contiene un $85\\%$ de Carbonato de Calcio ($CaCO_3$) para producir Óxido de Calcio ($CaO$) mediante la reacción: $CaCO_3 \\rightarrow CaO + CO_2$. Si en la planta se recogieron $80.0\\text{ kg}$ de $CaO$, ¿cuál fue el rendimiento porcentual de la reacción? ($CaCO_3 = 100.1\\text{ g/mol}$, $CaO = 56.1\\text{ g/mol}$).',
+    analysis: 'Un problema estequiométrico complejo que requiere primero ajustar la masa inicial por pureza y finalmente comparar el rendimiento real con el teórico.',
+    steps: [
+      'Paso 1: Calcular la masa de reactivo puro. $200\\text{ kg} \\times 0.85 = 170\\text{ kg}$ de $CaCO_3$ puro.',
+      'Paso 2: Convertir a moles (trabajando en kilomoles para mantener la escala). $kMoles = \\frac{170\\text{ kg}}{100.1\\text{ kg/kmol}} = 1.70\\text{ kmol}$.',
+      'Paso 3: Relación estequiométrica (1:1). Moles de producto teóricos = $1.70\\text{ kmol de } CaO$.',
+      'Paso 4: Masa teórica de producto. $1.70\\text{ kmol} \\times 56.1\\text{ kg/kmol} = 95.37\\text{ kg}$ (Rendimiento teórico).',
+      'Paso 5: Cálculo del rendimiento porcentual. $\\% R = (\\frac{\\text{Rendimiento Real}}{\\text{Rendimiento Teórico}}) \\times 100 = (\\frac{80.0}{95.37}) \\times 100 = 83.88\\%$.'
+    ]
   }
 ];
 

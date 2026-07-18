@@ -61,19 +61,6 @@ export const module2Examples = [
     ]
   },
   {
-    id: 'm2-ex4',
-    title: 'Ejemplo 4: Cuantificación del Defecto de Masa y Energía de Enlace',
-    problem: 'El núcleo del isótopo Hierro-56 (${}^{56}_{26}\\text{Fe}$) posee una masa experimental exacta de $55.9349\\text{ uma}$. Si se asume que la masa de un protón libre es $1.0073\\text{ uma}$ y la de un neutrón libre es $1.0087\\text{ uma}$, calcule el defecto de masa ($\\Delta m$) y estime la energía de enlace nuclear (en MeV) considerando el factor de conversión $1\\text{ uma} \\approx 931.5\\text{ MeV}$.',
-    analysis: 'Este problema integra la contabilidad de nucleones con la equivalencia masa-energía de Einstein, demostrando que la masa se conserva de manera relativista como energía.',
-    steps: [
-      'Contabilidad de nucleones: $Z=26$ protones. Neutrones = $A - Z = 56 - 26 = 30$ neutrones.',
-      'Cálculo de la masa teórica de los nucleones aislados: $\\text{Masa}_{\\text{teórica}} = (26 \\times 1.0073) + (30 \\times 1.0087) = 26.1898 + 30.2610 = 56.4508\\text{ uma}$.',
-      'Cálculo del defecto de masa ($\\Delta m$): $\\Delta m = \\text{Masa}_{\\text{teórica}} - \\text{Masa}_{\\text{experimental}} = 56.4508 - 55.9349 = 0.5159\\text{ uma}$.',
-      'Conversión a Energía de Enlace (E): $E = \\Delta m \\times 931.5\\text{ MeV/uma} = 0.5159 \\times 931.5 = 480.56\\text{ MeV}$.',
-      'Conclusión: Esta enorme cantidad de energía liberada por núcleo explica la estabilidad extrema del Hierro-56 en el universo.'
-    ]
-  },
-  {
     id: 'm2-ex5',
     title: 'Ejemplo 5: Masa Molecular de Compuestos Iónicos Complejos',
     problem: 'Calcule la masa molecular exacta del Fosfato de Calcio, $Ca_3(PO_4)_2$. Utilice las masas atómicas estándar de la tabla periódica: $Ca = 40.08$, $P = 30.97$, $O = 16.00\\text{ uma}$.',
