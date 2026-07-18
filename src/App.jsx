@@ -3,6 +3,7 @@ import Module1 from './modules/Module1';
 import Module2 from './modules/Module2';
 import Module3 from './modules/Module3';
 import Module4 from './modules/Module4';
+import Module5 from './modules/Module5';
 
 function App() {
   const [activeModule, setActiveModule] = useState(1);
@@ -53,7 +54,8 @@ function App() {
               { id: 1, title: "Módulo 1: Número atómico, masa, neutrones, electrones e isótopos" },
               { id: 2, title: "Módulo 2: Masa atómica relativa y masa atómica promedio" },
               { id: 3, title: "Módulo 3: Ley de conservación de la masa y proporción constante" },
-              { id: 4, title: "Módulo 4: Conversiones con Mol, Masa molar y Volumen molar" }
+              { id: 4, title: "Módulo 4: Conversiones con Mol, Masa molar y Volumen molar" },
+              { id: 5, title: "Módulo 5: Ecuaciones Químicas, Balanceo y Proporciones" }
             ].map((mod) => (
               <option key={mod.id} value={mod.id}>
                 {mod.title}
@@ -69,6 +71,7 @@ function App() {
         {activeModule === 2 && <Module2 />}
         {activeModule === 3 && <Module3 />}
         {activeModule === 4 && <Module4 />}
+        {activeModule === 5 && <Module5 />}
       </main>
 
     </div>
