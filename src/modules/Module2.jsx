@@ -7,7 +7,7 @@ const Module2 = () => {
   return (
     <div className="container">
       <header style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
-        <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Módulo 2: Masas Atómicas (Relativa vs. Promedio)</h1>
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Módulo 2: Masa atómica relativa y masa atómica promedio</h1>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '1.2rem', fontFamily: 'var(--font-serif)' }}>
           Entiende la diferencia clave entre la masa de un átomo y el promedio de la tabla periódica.
         </p>

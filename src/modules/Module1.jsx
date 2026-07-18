@@ -7,7 +7,7 @@ const Module1 = () => {
   return (
     <div className="container">
       <header style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
-        <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Módulo 1: Anatomía del Átomo e Isótopos</h1>
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Módulo 1: Número atómico, masa, neutrones, electrones e isótopos</h1>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '1.2rem', fontFamily: 'var(--font-serif)' }}>
           Fundamentos estructurales y caracterización isotópica.
         </p>

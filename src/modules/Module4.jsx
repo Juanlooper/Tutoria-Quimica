@@ -7,7 +7,7 @@ const Module4 = () => {
   return (
     <div className="container">
       <header style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
-        <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Módulo 4: El Mol y Estequiometría Básica</h1>
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Módulo 4: Conversiones con Mol, Masa molar y Volumen molar</h1>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '1.2rem', fontFamily: 'var(--font-serif)' }}>
           Fundamentos cuantitativos químicos y análisis estequiométrico.
         </p>

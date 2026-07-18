@@ -7,7 +7,7 @@ const Module3 = () => {
   return (
     <div className="container">
       <header style={{ textAlign: 'center', marginBottom: 'var(--spacing-xl)' }}>
-        <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Módulo 3: Leyes Ponderales Clásicas</h1>
+        <h1 style={{ fontSize: '2.5rem', marginBottom: '0.5rem' }}>Módulo 3: Ley de conservación de la masa y proporción constante</h1>
         <p style={{ color: 'var(--color-text-muted)', fontSize: '1.2rem', fontFamily: 'var(--font-serif)' }}>
           Fundamentos de Lavoisier y Proust en la conservación de la masa.
         </p>

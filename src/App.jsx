@@ -50,10 +50,10 @@ function App() {
             }}
           >
             {[
-              { id: 1, title: "Módulo 1: Anatomía Atómica" },
-              { id: 2, title: "Módulo 2: Masas Atómicas" },
-              { id: 3, title: "Módulo 3: Leyes Ponderales Clásicas" },
-              { id: 4, title: "Módulo 4: Estequiometría Básica" }
+              { id: 1, title: "Módulo 1: Número atómico, masa, neutrones, electrones e isótopos" },
+              { id: 2, title: "Módulo 2: Masa atómica relativa y masa atómica promedio" },
+              { id: 3, title: "Módulo 3: Ley de conservación de la masa y proporción constante" },
+              { id: 4, title: "Módulo 4: Conversiones con Mol, Masa molar y Volumen molar" }
             ].map((mod) => (
               <option key={mod.id} value={mod.id}>
                 {mod.title}
