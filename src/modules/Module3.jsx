@@ -62,7 +62,7 @@ const Module3 = () => {
       </section>
       
       <footer style={{ textAlign: 'center', color: 'var(--color-text-muted)', marginTop: 'var(--spacing-xl)', paddingTop: 'var(--spacing-lg)', borderTop: '1px solid var(--color-border)' }}>
-        <p>© 2026 Tutoría de Química. Excelencia Académica.</p>
+        <p>© 2026 Tutoría de Química desarrollada por Juan Rodriguez.</p>
       </footer>
     </div>
   );
