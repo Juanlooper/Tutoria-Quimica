@@ -11,7 +11,7 @@ function App() {
     <div className="App" style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
       
       {/* Sticky Global Navigation with Dropdown */}
-      <nav style={{ 
+      <nav className="navbar" style={{ 
         position: 'sticky',
         top: 0,
         zIndex: 1000,
@@ -31,6 +31,7 @@ function App() {
         
         <div>
           <select 
+            className="navbar-select"
             value={activeModule}
             onChange={(e) => setActiveModule(Number(e.target.value))}
             style={{
